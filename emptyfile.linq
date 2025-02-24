@@ -3,3 +3,4 @@
   <Namespace>System.Windows</Namespace>
 </Query>
 
+"Bonjour"
