@@ -3,26 +3,31 @@
   <Namespace>System.Windows</Namespace>
 </Query>
 
+
 class Entreprise 
 {
-	private string NomEntreprise;
-	private List<Employe> Employe;
+	private string _NomEntreprise;
+	private List<Employe> _Employe;
 
 
-	public Entreprise()
+	public Entreprise(string NomEntreprise, List<Employe> Employe)
 	{
-	
+		this._NomEntreprise = NomEntreprise;
+		this._Employe = Employe;
 	
 	}
 	
 	public void AjouterEmploye(Employe e)
 	{
-		Employe.Add(e);
+		_Employe.Add(e);
 	}
 	
 	public void AfficherEmploye()
 	{
-	
+		foreach(var employe in _Employe)
+		{
+			employe.Dump();
+		}
 	}
 }
 
