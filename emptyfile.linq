@@ -1,6 +1,53 @@
-<Query Kind="Expression">
+<Query Kind="Statements">
   <Namespace>System.Drawing</Namespace>
   <Namespace>System.Windows</Namespace>
 </Query>
 
-"Bonjour"
+class Employé 
+{
+	private string _Nom;
+	private string _Prenom;
+	private int _Id;
+	private DateOnly _DateEmbauche;
+	
+	public Employé()
+	{
+		
+	}
+	
+	public string GetNom()=>_Nom;
+	public string GetPrenom()=>_Prenom;
+	public int GetId()=>_Id;
+	public DateOnly GetDateEmbauche()=>_DateEmbauche;
+	
+	public void SetNom(string Nom)
+	{
+		if(string.IsNullOrWhiteSpace(Nom))
+			throw new ArgumentException();
+		_Nom=Nom;
+		
+	}
+
+	public void SetPrenom(string Prenom)
+	{
+		if (string.IsNullOrWhiteSpace(Prenom))
+			throw new ArgumentException();
+		_Prenom=Prenom;
+
+	}
+	public void SetId(int Id)
+	{
+		if(int.IsNegative(Id))
+			throw new ArgumentException();
+		_Id=Id;
+	}
+	public void SetDateEmbauche (DateOnly DateEmbauche)
+	{
+		_DateEmbauche=DateEmbauche;	
+	}
+	
+	public void AfficherInfo()
+	{
+		("Entreprise : ").Dump();
+	}
+}
